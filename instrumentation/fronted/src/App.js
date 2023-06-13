@@ -4,6 +4,8 @@ import { useState } from 'react';
 import DataTable from './components/DataTable';
 import DataChart from './components/DataChart';
 
+import './styles/App.css'
+
 function App() {
 
   const [objWaterQ, setObjWaterQ] = useState([])
@@ -18,6 +20,7 @@ function App() {
   }
 
   return (
+    <div className='App'>
     <div className="container">
       <h1 >Water Quality App</h1>
 
@@ -36,6 +39,7 @@ function App() {
       <DataTable data={objWaterQ}></DataTable>
 
       <Button variant='secondary' onClick={loadDataFromDB}>Cargar datos</Button>
+    </div>
     </div>
   );
 }
