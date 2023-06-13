@@ -1,6 +1,8 @@
-import {Button, Table} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import { axiosInstance } from './config/config';
 import { useState } from 'react';
+import DataTable from './components/DataTable';
+import DataChart from './components/DataChart';
 
 function App() {
 
@@ -19,44 +21,19 @@ function App() {
     <div className="container">
       <h1 >Water Quality App</h1>
 
-      <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>Fecha</th>
-          <th>Lugar</th>
-          <th>Estación</th>
-          <th>Turbidez</th>
-          <th>Color</th>
-          <th>Conductividad</th>
-          <th>pH</th>
-          <th>Temperatura</th>
-        </tr>
-      </thead>
-      <tbody>
+      <DataChart
+        data={objWaterQ}
+        array={objWaterQ.map((item) => item.ph)}
+        title="pH"
+      ></DataChart>
 
-        {objWaterQ.map((item) => {
-          return(
-            <tr key={item._id}>
-              <td>{item.createdAt}</td>
-              <td>{item.place}</td>
-              <td>{item.station}</td>
-              <td>{item.turbidity}</td>
-              <td>{item.color}</td>
-              <td>{item.conductivity}</td>
-              <td>{item.ph}</td>
-              <td>{item.temparature}</td>
-            </tr>)
-        })
+      <DataChart
+        data={objWaterQ}
+        array={objWaterQ.map((item) => item.turbidity)}
+        title="Turbidez"
+      ></DataChart>
 
-        }
-      </tbody>
-    </Table>
-
-
-
-
-
-
+      <DataTable data={objWaterQ}></DataTable>
 
       <Button variant='secondary' onClick={loadDataFromDB}>Cargar datos</Button>
     </div>
