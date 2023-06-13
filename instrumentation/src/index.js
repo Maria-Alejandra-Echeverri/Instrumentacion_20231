@@ -22,6 +22,9 @@ app.use(express.json()); //todo dato que llega es en formato json
 //Routes
 app.use('/api/waterQ', require('./routes/waterQ.routes'))
 
+// Asociaones de archivos estaticos
+app.use(express.static(path.join(__dirname, "../fronted/build")))
+
 //Configuracion
 app.set('port', port)
 
