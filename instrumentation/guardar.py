@@ -7,7 +7,8 @@ objeto = {"place": "MARINILLA",
           "color": [10, 20, 30],
           "conductivity": 2,
           "ph": 10,
-          "temperature": 25}
+          "temperature": 25,
+          "quality": "potable"}
 
 resp = requests.post(url, json=objeto)
 
