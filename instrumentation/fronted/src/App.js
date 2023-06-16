@@ -55,6 +55,7 @@ function App() {
       ></DataChart>
 
 
+
       <DataTable data={objWaterQ}></DataTable>
 
       <Button variant='secondary' onClick={loadDataFromDB}>Cargar datos</Button>

@@ -55,21 +55,21 @@ router.post('/', async(req, res, next) => {
     const{
         place, //ubiacion geografica
         station, //puntos de monitoreo
-        temperature,
+        turbidity,
+        color,
+        conductivity,
         ph,
-        rgb_color,
-        ir_diode_turbidity,
-        volt_conduct,
+        temparature,
         quality
     } = req.body;
     const waterqObj = new waterQModel({
         place, //ubiacion geografica
         station, //puntos de monitoreo
-        temperature,
+        turbidity,
+        color,
+        conductivity,
         ph,
-        rgb_color,
-        ir_diode_turbidity,
-        volt_conduct,
+        temparature,
         quality
     })
 
